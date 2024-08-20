@@ -1,0 +1,65 @@
+﻿@{
+    Layout = "_admin";
+}
+
+<!-- Page Container -->
+<div class="container my-5">
+    <!-- Welcome Header -->
+    <div class="text-center mb-4">
+        <h1 class="display-3">Welcome to the Dashboard</h1>
+        <p class="lead">Manage your Daig and Transactions efficiently.</p>
+    </div>
+
+    <!-- Dashboard Cards -->
+    <div class="row">
+        <!-- Daig Card -->
+        <div class="col-md-6 mb-4">
+            <div class="card border-primary">
+                <div class="card-header bg-primary text-white">
+                    <h5 class="card-title mb-0">Daig Overview</h5>
+                </div>
+                <div class="card-body">
+                    <p class="card-text">Quickly access and manage Daig records.</p>
+                    <a href="@Url.Action("Index", "Daig")" class="btn btn-primary">View Daig Records</a>
+                </div>
+                <div class="card-footer text-muted">
+                    Updated recently
+                </div>
+            </div>
+        </div>
+
+        <!-- Transactions Card -->
+        <div class="col-md-6 mb-4">
+            <div class="card border-success">
+                <div class="card-header bg-success text-white">
+                    <h5 class="card-title mb-0">Transactions Overview</h5>
+                </div>
+                <div class="card-body">
+                    <p class="card-text">Manage and review Transactions with ease.</p>
+                    <a href="@Url.Action("Index", "Transacti on")" class="btn btn-success">View Transactions</a>
+                </div>
+                <div class="card-footer text-muted">
+                    Last updated 5 minutes ago
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Recent Activities Section -->
+    <div class="mb-4">
+        <h3 class="text-center">Recent Activities</h3>
+        <div class="list-group">
+            <!-- Placeholder for Recent Activities -->
+            <a href="#" class="list-group-item list-group-item-action">
+                <h5 class="mb-1">Recent Activity 1</h5>
+                <p class="mb-1">Details about the most recent activity.</p>
+                <small>Updated 1 hour ago</small>
+            </a>
+            <a href="#" class="list-group-item list-group-item-action">
+                <h5 class="mb-1">Recent Activity 2</h5>
+                <p class="mb-1">Details about the next recent activity.</p>
+                <small>Updated 2 hours ago</small>
+            </a>
+        </div>
+    </div>
+</div>

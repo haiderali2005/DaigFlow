@@ -1,0 +1,99 @@
+﻿@if (TempData["tran"] != null)
+{
+    <div class="alert alert-warning alert-dismissible fade show border-0 rounded-3 shadow-sm" role="alert">
+        <div class="d-flex align-items-center">
+            <i class="bi bi-exclamation-triangle-fill me-2" style="font-size: 1.25rem;"></i>
+            <strong class="me-auto">@TempData["tran"]</strong>
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    </div>
+}
+
+<main id="home2">
+    <section class="hero text-center" id="hero">
+        <div class="container h-100">
+            <div class="row h-100">
+                <div class="col d-flex justify-content-center align-items-center flex-column">
+                    <h1 class="text-white">DaigFlow</h1>
+                    <h2 class="text-white">Manage your Daig and Transactions efficiently.</h2>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="mt-5 container text-center">
+        <h1 id="daigabt" class="section-heading">About Us</h1>
+    </div>
+
+    <div class="welcome-container text-center mt-5">
+        <h5>
+            Welcome to DaigFlow, your go-to platform for exceptional daig catering services. At DaigFlow, we pride ourselves on delivering an unparalleled culinary experience with our selection of traditional and flavorful daigs. Whether you're hosting a grand celebration, a family gathering, or a corporate event, our daig offerings are designed to meet all your catering needs with excellence and authenticity.
+
+            Our platform simplifies the ordering process, allowing you to browse, customize, and manage your daig orders with ease. Each daig is crafted with the finest ingredients and a dedication to traditional cooking methods, ensuring a memorable taste that delights every palate. From spicy biryanis to rich haleem, our diverse menu caters to all preferences and occasions.
+
+            At DaigFlow, we believe in quality, convenience, and customer satisfaction. Our intuitive system and responsive support team are here to ensure a seamless experience from start to finish. Join us in celebrating the rich flavors of our heritage with DaigFlow—where every meal is a journey through taste and tradition.
+
+            Thank you for choosing DaigFlow. We look forward to serving you and making your events truly special.
+        </h5>
+    </div>
+
+    <div class="mt-5 container text-center">
+        <h1 id="daigmain" class="section-heading">Our Daigs</h1>
+    </div>
+
+    <div class="mt-5 container">
+        <div class="row">
+            @Html.Partial("_daig", ViewData["newdaig"])
+        </div>
+    </div>
+</main>
+<style>
+    body {
+        background-color: #e9ecef;
+        font-family: Arial, sans-serif;
+    }
+
+    
+        .hero h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .hero h2 {
+            font-size: 1.75rem;
+            font-weight: 400;
+            margin-top: 0;
+        }
+
+    .text-shadow {
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    }
+
+    .section-heading {
+        font-size: 3rem;
+        color: #000000;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+        letter-spacing: 1px;
+        margin-bottom: 2rem;
+    }
+
+    .welcome-container {
+        border: 2px solid #333;
+        border-radius: 0.75rem;
+        padding: 40px;
+        margin: 20px auto;
+        max-width: 80%;
+        background-color: #ffffff;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+        .welcome-container h5 {
+            color: #333;
+            font-size: 1.2rem;
+            line-height: 1.6;
+            font-family: 'Arial', sans-serif;
+            text-align: center;
+            padding: 0 15px;
+        }
+</style>

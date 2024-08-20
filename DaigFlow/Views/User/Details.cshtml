@@ -1,0 +1,41 @@
+﻿@model DaigFlow.Models.User
+
+@{
+    Layout = "_admin";
+    ViewData["Title"] = "User Details";
+}
+<div class="container my-4">
+    <h1 class="display-4 text-center mb-4">User Details</h1>
+
+    <div class="card border-info shadow-lg">
+        <div class="card-header bg-info text-white">
+            <h4 class="mb-0">Daig Information</h4>
+        </div>
+        <div class="card-body">
+            <dl class="row">
+                <dt class="col-sm-3 fw-bold">
+                    @Html.DisplayNameFor(model => model.Username)
+                </dt>
+                <dd class="col-sm-9">
+                    @Html.DisplayFor(model => model.Username)
+                </dd>
+                <dt class="col-sm-3 fw-bold">
+                    @Html.DisplayNameFor(model => model.Email)
+                </dt>
+                <dd class="col-sm-9">
+                    @Html.DisplayFor(model => model.Email)
+                </dd>
+                <dt class="col-sm-3 fw-bold">
+                    @Html.DisplayNameFor(model => model.Password)
+                </dt>
+                <dd class="col-sm-9">
+                    @Html.DisplayFor(model => model.Password)
+                </dd>         
+            </dl>
+        </div>
+        <div class="card-footer text-end">
+            <a asp-action="Edit" asp-route-id="@Model?.UserId" class="btn btn-warning">Edit</a>
+            <a asp-action="Index" class="btn btn-secondary ms-2">Back to List</a>
+        </div>
+    </div>
+</div>

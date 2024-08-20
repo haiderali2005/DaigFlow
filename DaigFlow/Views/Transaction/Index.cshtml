@@ -1,0 +1,59 @@
+﻿@model IEnumerable<DaigFlow.Models.Transactions>
+
+@{
+    Layout = "_admin";
+}
+@{
+    ViewData["Title"] = "Index";
+}
+
+<!-- Page Container -->
+<div class="container my-4">
+    <h1 class="display-4 text-center mb-4">Transaction List</h1>
+
+    <!-- Create New Button -->
+    <p>
+        <a asp-action="Create" class="btn btn-primary">Create New</a>
+    </p>
+
+    <!-- Transactions Table -->
+    <div class="table-responsive">
+        <table class="table table-striped table-bordered">
+            <thead class="table-dark">
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Date)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.IsSuccessful)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Daig)
+                    </th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Date)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.IsSuccessful)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Daig.Name)
+                        </td>
+                        <td>
+                            <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-warning btn-sm">Edit</a> |
+                            <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-info btn-sm">Details</a> |
+                            <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-danger btn-sm">Delete</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

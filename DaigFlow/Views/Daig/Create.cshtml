@@ -1,0 +1,60 @@
+﻿@model DaigFlow.Models.Daig
+
+@{
+    ViewData["Title"] = "Create Daig";
+    Layout = "~/Views/Shared/_admin.cshtml";
+}
+
+<!-- Page Header -->
+<div class="container my-4">
+    <h1 class="display-4 text-center mb-4">Create Daig</h1>
+
+    <!-- Form Container -->
+    <div class="row justify-content-center">
+        <div class="col-md-8 col-lg-6">
+            <div class="card border-primary shadow-lg">
+                <div class="card-header bg-primary text-white">
+                    <h4 class="mb-0">Add New Daig</h4>
+                </div>
+                <div class="card-body">
+                    <form asp-action="Create" enctype="multipart/form-data">
+                        <div asp-validation-summary="ModelOnly" class="alert alert-danger mb-4"></div>
+
+                        <!-- Name Input -->
+                        <div class="mb-3">
+                            <label asp-for="Name" class="form-label fs-5">Daig Name</label>
+                            <input asp-for="Name" class="form-control" placeholder="Enter Daig Name" />
+                            <div class="invalid-feedback">
+                                <span asp-validation-for="Name"></span>
+                            </div>
+                        </div>
+
+                        <!-- Total Count Input -->
+                        <div class="mb-3">
+                            <label asp-for="Price" class="form-label fs-5">Price</label>
+                            <input asp-for="Price" type="number" class="form-control" placeholder="Enter Price" />
+                            <div class="invalid-feedback">
+                                <span asp-validation-for="Price"></span>
+                            </div>
+                        </div>
+
+                        <!-- Image Upload -->
+                        <div class="mb-4">
+                            <label asp-for="ImagePath" class="form-label fs-5">Daig Image</label>
+                            <input asp-for="ImagePath" type="file" class="form-control" />
+                            <div class="invalid-feedback">
+                                <span asp-validation-for="ImagePath"></span>
+                            </div>
+                        </div>
+
+                        <!-- Submit Button -->
+                        <div class="d-flex justify-content-between">
+                            <button type="submit" class="btn btn-primary btn-lg">Create</button>
+                            <a asp-action="Index" class="btn btn-secondary btn-lg">Back to List</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

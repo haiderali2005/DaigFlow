@@ -1,0 +1,53 @@
+﻿@model DaigFlow.Models.Transactions
+
+@{
+    ViewData["Title"] = "Edit";
+    Layout = "~/Views/Shared/_admin.cshtml";
+}
+
+<!-- Page Container -->
+<div class="container my-4">
+    <h1 class="display-4 text-center mb-4">Edit Transaction</h1>
+
+    <!-- Edit Form Card -->
+    <div class="card">
+        <div class="card-header">
+            <h4 class="card-title">Edit Transaction</h4>
+        </div>
+        <div class="card-body">
+            <form asp-action="Edit">
+                <div asp-validation-summary="ModelOnly" class="text-danger mb-3"></div>
+                <input type="hidden" asp-for="Id" />
+
+                <!-- DaigId Selection -->
+                <div class="form-group mb-3">
+                    <label asp-for="DaigId" class="form-label"></label>
+                    @Html.Partial("_par", ViewData["newdaig"])
+                </div>
+
+                <!-- Date Input -->
+                <div class="form-group mb-3">
+                    <label asp-for="Date" class="form-label"></label>
+                    <input asp-for="Date" class="form-control" />
+                    <span asp-validation-for="Date" class="text-danger"></span>
+                </div>
+
+                <!-- IsSuccessful Checkbox -->
+                <div class="form-group form-check mb-3">
+                    <input asp-for="IsSuccessful" class="form-check-input" type="checkbox" id="isSuccessful" />
+                    <label class="form-check-label" for="isSuccessful">
+                        @Html.DisplayNameFor(model => model.IsSuccessful)
+                    </label>
+                </div>
+
+                <!-- Submit Button -->
+                <div class="form-group">
+                    <input type="submit" value="Save" class="btn btn-primary" />
+                </div>
+            </form>
+        </div>
+        <div class="card-footer text-center">
+            <a asp-action="Index" class="btn btn-secondary">Back to List</a>
+        </div>
+    </div>
+</div>

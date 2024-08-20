@@ -1,0 +1,53 @@
+﻿@model DaigFlow.Models.Daig
+
+@{
+    ViewData["Title"] = "Edit Daig";
+    Layout = "~/Views/Shared/_admin.cshtml";
+}
+
+<!-- Page Header -->
+<div class="container my-4">
+    <h1 class="display-4 text-center mb-4">Edit Daig</h1>
+
+    <!-- Edit Form Card -->
+    <div class="card border-primary shadow-lg">
+        <div class="card-header bg-primary text-white">
+            <h4 class="mb-0">Edit Daig Information</h4>
+        </div>
+        <div class="card-body">
+            <form asp-action="Edit" enctype="multipart/form-data">
+                <div asp-validation-summary="ModelOnly" class="text-danger mb-3"></div>
+                <input type="hidden" asp-for="DaigId" />
+
+                <!-- Name Field -->
+                <div class="mb-3">
+                    <label asp-for="Name" class="form-label"></label>
+                    <input asp-for="Name" class="form-control" placeholder="Enter Daig Name" />
+                    <span asp-validation-for="Name" class="text-danger"></span>
+                </div>
+
+                <!-- Total Count Field -->
+                <div class="mb-3">
+                    <label asp-for="Price" class="form-label">Enter Price</label>
+                    <input asp-for="Price" class="form-control" placeholder="Enter Price" />
+                    <span asp-validation-for="Price" class="text-danger"></span>
+                </div>
+
+                <!-- Image Field -->
+                <div class="mb-3">
+                    <label asp-for="ImagePath" class="form-label"></label>
+                    <input asp-for="ImagePath" type="file" class="form-control" />
+                    <span asp-validation-for="ImagePath" class="text-danger"></span>
+                </div>
+
+                <!-- Submit Button -->
+                <div class="d-flex justify-content-end">
+                    <input type="submit" value="Save" class="btn btn-primary btn-lg" />
+                </div>
+            </form>
+        </div>
+        <div class="card-footer text-end">
+            <a asp-action="Index" class="btn btn-secondary">Back to List</a>
+        </div>
+    </div>
+</div>

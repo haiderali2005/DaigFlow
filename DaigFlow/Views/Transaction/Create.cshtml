@@ -1,0 +1,52 @@
+﻿@model DaigFlow.Models.Transactions
+
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Views/Shared/_admin.cshtml";
+}
+
+<!-- Page Header -->
+<div class="container my-4">
+    <h1 class="display-4 text-center mb-4">Create New Transaction</h1>
+
+    <div class="row">
+        <div class="col-md-6 offset-md-3">
+            <!-- Form for Creating Transaction -->
+            <form asp-action="Create">
+                <div asp-validation-summary="ModelOnly" class="text-danger mb-3"></div>
+
+                <!-- Daig Selection Dropdown -->
+                <div class="form-group">
+                    <label asp-for="DaigId" class="form-label">Daig</label>
+                    @Html.DropDownList("DaigId", (IEnumerable<SelectListItem>)ViewData["DaigList"], "Select Daig", new { @class = "form-select" })
+                    <span asp-validation-for="DaigId" class="text-danger"></span>
+                </div>
+
+                <!-- Date Input -->
+                <div class="form-group">
+                    <label asp-for="Date" class="form-label"></label>
+                    <input asp-for="Date" class="form-control" type="date" />
+                    <span asp-validation-for="Date" class="text-danger"></span>
+                </div>
+
+                <!-- Success Checkbox -->
+                <div class="form-group form-check">
+                    <input asp-for="IsSuccessful" class="form-check-input" type="checkbox" id="IsSuccessful" />
+                    <label class="form-check-label" for="IsSuccessful">
+                        @Html.DisplayNameFor(model => model.IsSuccessful)
+                    </label>
+                </div>
+
+                <!-- Submit Button -->
+                <div class="form-group text-end">
+                    <input type="submit" value="Create" class="btn btn-primary" />
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Back to List Link -->
+    <div class="text-center mt-4">
+        <a asp-action="Index" class="btn btn-secondary">Back to List</a>
+    </div>
+</div>

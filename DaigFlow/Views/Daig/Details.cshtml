@@ -1,0 +1,56 @@
+﻿@model DaigFlow.Models.Daig
+
+@{
+    Layout = "_admin";
+    ViewData["Title"] = "Daig Details";
+}
+
+<!-- Page Header -->
+<div class="container my-4">
+    <h1 class="display-4 text-center mb-4">Daig Details</h1>
+
+    <!-- Details Card -->
+    <div class="card border-info shadow-lg">
+        <div class="card-header bg-info text-white">
+            <h4 class="mb-0">Daig Information</h4>
+        </div>
+        <div class="card-body">
+            <dl class="row">
+                <!-- Name -->
+                <dt class="col-sm-3 fw-bold">
+                    @Html.DisplayNameFor(model => model.Name)
+                </dt>
+                <dd class="col-sm-9">
+                    @Html.DisplayFor(model => model.Name)
+                </dd>
+
+                <!-- Total Count -->
+                <dt class="col-sm-3 fw-bold">
+                    @Html.DisplayNameFor(model => model.Price)
+                </dt>
+                <dd class="col-sm-9">
+                    @Html.DisplayFor(model => model.Price)
+                </dd>
+
+                <!-- Image -->
+                <dt class="col-sm-3 fw-bold">
+                    Image
+                </dt>
+                <dd class="col-sm-9">
+                    @if (!string.IsNullOrEmpty(Model.ImagePath))
+                    {
+                        <img src="@("~/daigpics/" + Model.ImagePath)" asp-append-version=true class="img-fluid rounded" alt="Daig Image" width="200" />
+                    }
+                    else
+                    {
+                        <span>No image available</span>
+                    }
+                </dd>
+            </dl>
+        </div>
+        <div class="card-footer text-end">
+            <a asp-action="Edit" asp-route-id="@Model?.DaigId" class="btn btn-warning">Edit</a>
+            <a asp-action="Index" class="btn btn-secondary ms-2">Back to List</a>
+        </div>
+    </div>
+</div>
